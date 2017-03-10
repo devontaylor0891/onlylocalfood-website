@@ -1,0 +1,28 @@
+extends layout
+
+.container
+	block content
+		.row
+			.col-md-10.col-md-offset-2
+				.panel.panel-default
+					.panel-heading
+						h4.panel-title Upcoming Deliveries
+					.panel-body
+						table.table.table-hover.table-responsive
+							thead
+								tr
+									th Type
+									th Date
+									th City
+									th Start Time
+									th End Time
+									th Details
+							for delivery in deliveries
+								tbody
+									tr
+										td= delivery.type
+										td= delivery.date
+										td= delivery.city
+										td= delivery.startTime
+										td= delivery.endTime
+										td= delivery.description 

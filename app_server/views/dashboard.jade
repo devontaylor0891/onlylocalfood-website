@@ -1,0 +1,56 @@
+extends layout
+
+.container
+	block content
+		.row
+			.col-md-3.bg-primary
+				//This is where the different pages within a dashboard will be listed.
+				h3 Select your view:
+				ul.text-white
+					li.active
+						a(href="#") Orders
+					li
+						a(href="#") Users
+					li
+						a(href="#") Producers
+					li
+						a(href="#") Deliveries
+					li
+						a(href="#") Info
+			.col-md-9
+				.row
+					h2 Orders
+					.panel-group#accordian
+						.panel.panel-default
+							.panel-heading
+								h4.panel-title
+									a(data-toggle="collapse", data-parent="#accordian", href="#collapseOne") Click to expand
+							.panel-collapse.collapse.in#collapseOne
+								.panel-body
+									table.table.table-hover.table-responsive
+										thead
+											tr
+												th Name
+												th City
+										tbody
+											tr
+												td Bob
+												td Moosomin
+											tr
+												td Betty
+												td Wapella
+						.panel.panel-default
+							.panel-heading
+								h4.panel-title
+									a(data-toggle="collapse", data-parent="#accordian", href="#collapseTwo") Click to expand
+							.panel-collapse.collapse.in#collapseTwo
+								.panel-body
+									This is the content
+									
+						.panel.panel-default
+							.panel-heading
+								h4.panel-title
+									a(data-toggle="collapse", data-parent="#accordian", href="#collapseThree") Click to expand
+							.panel-collapse.collapse.in#collapseThree
+								.panel-body
+									This is the content

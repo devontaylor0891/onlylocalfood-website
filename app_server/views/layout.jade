@@ -1,0 +1,48 @@
+doctype html
+html
+	head
+		meta(name='viewport', content='width=device-width, initial-scale=1.0')
+		title= title
+		<!-- Font Awesome -->
+		link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css")
+		<!-- Bootstrap core CSS -->
+		link(href="/bootstrap/css/bootstrap.css" rel="stylesheet")
+		link(rel='stylesheet', href='/stylesheets/style.css')
+		<!-- Roboto font -->
+		link(href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet")
+
+	body
+		.greenBox
+
+		.navbar.navbar-default
+			.container
+				.navbar-header
+					a.navbar-brand#logo(href='/') 
+						img(src='/images/logo.png')
+					button.navbar-toggle(type='button', data-toggle='collapse', data-target='#navbar-main')
+						span.icon-bar
+						span.icon-bar
+						span.icon-bar
+					#navbar-main.navbar-collapse.collapse
+						ul.nav.navbar-nav.navbar-right
+							li
+								a(href='/about/') About
+							li
+								button.btn.btn-primary.btn-sm(data-toggle='modal', data-target='#signupModal') Sign Up			
+	
+		.container
+			block content
+						
+		footer
+			.row
+				.col-xs-12
+					small &copy; OLF Test 2017
+
+		<!-- JQuery -->
+		script(src="/bootstrap/js/jquery-3.1.1.min.js")
+		<!-- Bootstrap tooltips -->
+		script(type="text/javascript" src="/bootstrap/js/tether.min.js")
+		<!-- Bootstrap core JavaScript -->
+		script(type="text/javascript" src="/bootstrap/js/bootstrap.min.js")
+		script $('#signupModal').modal('hide');
+

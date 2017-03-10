@@ -1,0 +1,85 @@
+extends layout
+
+.container
+	block content
+
+		<!-- modal -->
+		.modal.fade#signupModal(tab-index='-1', role='dialog', aria-labelledby='Signup', aria-hidden='true')
+			.modal-dialog.modal-sm(role="document")
+				.modal-content
+					.modal-header
+						h4.modal-title Signup for OLF
+					.modal-body
+						.row
+							form
+								.form-group
+									label(for="firstName") First Name
+									p
+										Why? Because don't you want to be on a first name basis with your producer?
+									input.form-control#firstName(type='text', name='firstName')
+								.form-group
+									label(for="email") Email
+									input.form-control#email(type='email', name='email')
+								.form-group
+									label(for="password") Password
+									input.form-control#password(type='password', name='password')
+					.modal-footer
+						button.btn.btn-default(data-dismiss='modal') Close
+						a.btn.btn-primary.pull-right(href='/dashboard/', role='button') Sign Up!
+
+		<!-- Jumbotron -->
+		.backImage
+			.splashContents
+				h1 A new and better way to find and order local food!
+				h3 Use OLF to find what is available in your area, when and how to get it, and even create online orders that go directly to the producer - no middleman needed!
+				p.text-center
+					a.btn.btn-primary.btn-lg(href='search', role='button') Start Searching!
+				p.text-center or 
+					a(href='/how-it-works/') learn how it works.
+
+
+		
+		<!-- quick description section -->
+		h2 A new way to find and order local food
+		.row.text-center
+			.col-md-4
+				.services
+					span.glyphicon.glyphicon-globe(aria-hidden='true')
+					h3
+						strong Location-based
+					p This is where a nice description will go.
+			.col-md-4
+				.services
+					span.glyphicon.glyphicon-user(aria-hidden='true')
+					h3
+						strong No middleman
+					p This is where a nice description will go.		
+			.col-md-4
+				.services
+					span.glyphicon.glyphicon-cloud(aria-hidden='true')
+					h3
+						strong Pay on delivery
+					p This is where a nice description will go.
+							
+		.well.well-lg
+			<!-- contact form section -->
+			h2 Contact us
+			h4 Have questions, comments, or want to know more? Let us know, we'd love to hear from you!
+			br/
+			.row
+				.col-md-10.col-md-offset-1
+					form.contact-form.form-horizontal
+						.form-group
+							label.col-sm-2.control-label(for='name') Your Name
+							.col-sm-10
+								input.form-control#name(type='text', name='name')
+						.form-group
+							label.col-sm-2.control-label(for='email') Email
+							.col-sm-10
+								input.form-control#email(type='email', name='email')
+						.form-group
+							label.col-sm-2.control-label(for='comments') Comments or Questions
+							.col-sm-10
+								textarea.form-control#comments(type='textarea', name='comments', rows='3')
+					button.btn.btn-primary.pull-right(type='submit') Send Message
+					br/
