@@ -1,4 +1,4 @@
-# onlylocalfood-website
+# onlylocalfood
 For development of the front end.
 
 
@@ -20,4 +20,4 @@ Terminal:
 
 $ npm start
 
-The api can be reached at http://localhost:3000.
+The api can be reached at http://localhost:8081.
