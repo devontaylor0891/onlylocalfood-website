@@ -1,5 +1,5 @@
 branch-defaults:
-  copy-over-work:
+  master:
     environment: onlylocalfoods-dashboard
     group_suffix: null
 environment-defaults:
