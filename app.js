@@ -27,6 +27,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', index);
 app.use('/dashboard', dashboard);
 app.use('/producer', producer);
+app.use('/producer/:id', producer);
 app.use('/cart', cart);
 
 // catch 404 and forward to error handler

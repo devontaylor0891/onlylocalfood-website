@@ -11,10 +11,7 @@ router.get('/', ctrlProducer.producer);
 router.get('/product', ctrlProducer.product);
 
 /* GET individual product page. */
-router.route('/:id')
-.get(function (req, res, next) {
-	res.end('This will return with a producer id: ' + req.params.id);
-});
+router.get('/:id', ctrlProducer.producer);
 
 /* GET schedule page. */
 router.get('/schedule', ctrlProducer.schedule);
