@@ -79,7 +79,6 @@ extends layout
 										label
 											input(type='checkbox', value='Scheduled Farmgate Pickup')
 											span Scheduled Farmgate Pickup
-					
 			.col-sm-8.col-md-9
 				.row
 					for product in products
@@ -92,5 +91,4 @@ extends layout
 									p.price $#{product.price}/#{product.unit}
 									.btn-group.btn-group-justified
 										a.btn.btn-primary(href="/producer/product/", role="button") Details
-										a.btn.btn-primary(href="/cart", role="button") Add to Cart
-					
+										a.btn.btn-primary(href="/cart", role="button") Add to Cart			
