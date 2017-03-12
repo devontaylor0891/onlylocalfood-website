@@ -43,7 +43,7 @@ module.exports.producer = function (req, res, next) {
 
 	request(options)
     .then(function (body) {
-		 	res.render('producer', body);
+	 	res.render('producer', body[req.params.id]);
     })
     .catch(function (err) {
       console.log(err);
