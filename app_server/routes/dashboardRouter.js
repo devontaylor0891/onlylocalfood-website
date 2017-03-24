@@ -5,4 +5,5 @@ var ctrlDash = require('../controllers/dashboard');
 /* GET dashboard page. */
 router.get('/', ctrlDash.dashboard);
 
+
 module.exports = router;
