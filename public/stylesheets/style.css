@@ -8,22 +8,34 @@ html, body {
 	}
 }
 
-body {
-  padding: 50px;
-  /*font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;*/
+@media (max-width: 767px) {
+	body {
+		padding: 50px 0px;
+	}
+}
+@media (min-width: 768px) {
+	body {
+	  padding: 50px;
+	  /*font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;*/
+	}
 }
 
 a {
   color: #880e4f;
 }
 
-.btn {
+.btn-primary {
 	background-color: #880e4e !important;
 	border-color: #490027 !important;
 }
 
 .btn:hover {
 	background-color: #6c0039 !important;
+}
+
+/*left margin to separate buttons */
+.margin-left-1em {
+	margin-left: 1em !important;
 }
 
 .bg-primary {
@@ -132,4 +144,30 @@ a {
 
 .padding-top-zero {
 	padding.top: 0;
+}
+
+/* CART-specific styles */
+.xs40 {
+	width: 40% !important;
+}
+
+.xs25 {
+	width: 25% !important;
+}
+
+.xs10 {
+	width: 10% !important;
+}
+
+.red-text {
+	color: maroon;
+}
+
+/* Tablesaw adjustments */
+@media (max-width: 39.9375em) {
+  /* Table rows have a gray bottom stroke by default */
+
+  .tablesaw-stack tbody tr {
+    border-bottom: 3px solid #dfdfdf;
+  }
 }

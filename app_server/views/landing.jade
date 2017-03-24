@@ -3,30 +3,6 @@ extends layout
 .container
 	block content
 
-		<!-- modal -->
-		.modal.fade#signupModal(tab-index='-1', role='dialog', aria-labelledby='Signup', aria-hidden='true')
-			.modal-dialog.modal-sm(role="document")
-				.modal-content
-					.modal-header
-						h4.modal-title Signup for OLF
-					.modal-body
-						.row
-							form
-								.form-group
-									label(for="firstName") First Name
-									p
-										Why? Because don't you want to be on a first name basis with your producer?
-									input.form-control#firstName(type='text', name='firstName')
-								.form-group
-									label(for="email") Email
-									input.form-control#email(type='email', name='email')
-								.form-group
-									label(for="password") Password
-									input.form-control#password(type='password', name='password')
-					.modal-footer
-						button.btn.btn-default(data-dismiss='modal') Close
-						a.btn.btn-primary.pull-right(href='/dashboard/', role='button') Sign Up!
-
 		<!-- Jumbotron -->
 		.backImage
 			.splashContents

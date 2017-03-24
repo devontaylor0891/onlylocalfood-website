@@ -1,15 +1,18 @@
 doctype html
 html
 	head
-		meta(name='viewport', content='width=device-width, initial-scale=1.0')
-		title= title
-		<!-- Font Awesome -->
-		link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css")
-		<!-- Bootstrap core CSS -->
-		link(href="/bootstrap/css/bootstrap.css" rel="stylesheet")
-		link(rel='stylesheet', href='/stylesheets/style.css')
-		<!-- Roboto font -->
-		link(href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet")
+		block head
+			meta(name='viewport', content='width=device-width, initial-scale=1.0')
+			title= title
+			<!-- Font Awesome -->
+			link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css")
+			<!-- Bootstrap core CSS -->
+			link(href="/bootstrap/css/bootstrap.css" rel="stylesheet")
+			<!-- Roboto font -->
+			link(href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet")
+			<!-- Tablesaw Styles -->
+			link(rel="stylesheet", href="../stylesheets/tablesaw.css")
+			link(rel='stylesheet', href='/stylesheets/style.css')
 
 	body
 		.greenBox
@@ -31,6 +34,27 @@ html
 								button.btn.btn-primary.btn-sm(data-toggle='modal', data-target='#signupModal') Sign Up			
 	
 		.container
+			<!-- modal -->
+			.modal.fade#signupModal(tab-index='-1', role='dialog', aria-labelledby='Signup', aria-hidden='true')
+				.modal-dialog.modal-sm(role="document")
+					.modal-content
+						.modal-header
+							h4.modal-title Signup for OLF
+						.modal-body
+							.row
+								form
+									.form-group
+										label(for="firstName") First Name
+										input.form-control#firstName(type='text', name='firstName')
+									.form-group
+										label(for="email") Email
+										input.form-control#email(type='email', name='email')
+									.form-group
+										label(for="password") Password
+										input.form-control#password(type='password', name='password')
+						.modal-footer
+							button.btn.btn-default(data-dismiss='modal') Close
+							a.btn.btn-primary.pull-right(href='/dashboard/', role='button') Sign Up!
 			block content
 						
 		footer
@@ -45,4 +69,7 @@ html
 		<!-- Bootstrap core JavaScript -->
 		script(type="text/javascript" src="/bootstrap/js/bootstrap.min.js")
 		script $('#signupModal').modal('hide');
+		<!-- Tablesaw scripts -->
+		script(src="../javascripts/tablesaw.js")
+		script(src="../javascripts/tablesaw-init.js")
 

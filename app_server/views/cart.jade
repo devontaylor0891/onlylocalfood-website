@@ -1,0 +1,105 @@
+extends layout
+
+
+block content
+
+	.row.text-center
+		h2 Your Cart
+		p Please review your items and select when, where, and how to get your order.
+
+	.row
+		.col-sm-10.col-sm-offset-1
+			.panel.panel-default
+				.panel-heading
+					h4.panel-title Step 1 
+						small Review your items
+				.panel-body
+					table.table.table-hover
+						form
+							thead
+								tr
+									th.col-xs-5 Product
+									th.col-xs-3 Qty
+									th.col-xs-3 Price
+									th.col-xs-1 
+							tbody
+								tr
+									td Product Name
+										p $XX.xx
+									td
+										input(type="number", placeholder="1", name="quantity")
+									td $XX.xx
+									td
+										span.glyphicon.glyphicon-remove-sign.red-text(aria-hidden='true')
+			
+	.row
+		.col-sm-10.col-sm-offset-1
+			.panel.panel-default
+				.panel-heading
+					h4.panel-title Step 2 
+						small Choose where and how to get your order
+				.panel-body
+				
+					form.form-horizontal
+						form-group
+							label(for="community") Community:
+							select(name="community")
+								option(value="Moosomin") Moosomin
+								option(value="Wapella") Wapella
+								
+						table.table.table-hover.table-responsive
+							tbody
+								tr
+									td 
+										input(type="radio")
+									td 
+										table.tablesaw.tablesaw-stack.table-hover.table(data-tablesaw-mode="stack")
+											thead
+												tr
+													th Date
+													th Time
+													th Type
+													th Details
+												tbody
+													tr
+														td Jan 1
+														td 2:00 - 4:30
+														td Door-to-door
+														td This is where a nice description will go. This is where a nice description will go. This is where a nice description will go.
+													
+								tr
+									td 
+										input(type="radio")
+									td 
+										table.tablesaw.tablesaw-stack.table-hover.table(data-tablesaw-mode="stack")
+											thead
+												tr
+													th Date
+													th Time
+													th Type
+													th Details
+												tbody
+													tr
+														td Jan 2
+														td 1:00 - 2:30
+														td Other Pickup
+														td This is where a nice description will go. This is where a nice description will go. This is where a nice description will go.
+						
+						
+	.row
+		.col-sm-10.col-sm-offset-1
+			.panel.panel-default
+				.panel-heading
+					h4.panel-title Step 3 
+						small Agree and send your order
+				.panel-body
+					.checkbox
+						label
+							input(type="checkbox")
+							| This is the disclaimer. This is the disclaimer. This is the disclaimer. This is the disclaimer. This is the disclaimer. This is the disclaimer. This is the disclaimer. This is the disclaimer. This is the disclaimer.
+	.row
+		button.btn.btn-primary.pull-right.margin-left-1em(href="#") Send Order
+		&nbsp
+		&nbsp
+		button.btn.btn-default.pull-right(href="#") Keep Shopping
+			

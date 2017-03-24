@@ -1,5 +1,5 @@
 
 /* GET cart page */
-module.exports.cart = function (req, res, next) {
+module.exports.cart = function (req, res) {
 	res.render('cart');
 };
