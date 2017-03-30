@@ -1,4 +1,5 @@
 var request = require('request-promise');
+var Promise = require('bluebird');
 
 /* GET product page */
 module.exports.product = function (req, res, next) {
@@ -35,12 +36,38 @@ module.exports.product = function (req, res, next) {
 
 /* GET producer page */
 module.exports.producer = function (req, res, next) {
-	var options = {
+	// array of requests
+	var requests = [{
     method: 'GET',
     json: true,
     uri: 'http://onlylocalfoods-api.39mpginjms.us-west-2.elasticbeanstalk.com/api/users',
-	};
+	}, {
+    method: 'GET',
+    json: true,
+    uri: 'http://onlylocalfoods-api.39mpginjms.us-west-2.elasticbeanstalk.com/api/products',
+	}];
 
+	//send the requests and once they are all done, .then will execute
+	Promise.map(requests, function(obj) {
+	  return request(obj).then(function(body) {
+	    return body;
+	  });
+	}).then(function(results) {
+	  for (var i = 0; i < results.length; i++) {
+	    // access the result's body via results[i]
+
+			// I know it's in the 0 position cause thats where the request was
+			var responseFromFirstRequest = results[0];
+			res.render('producer', responseFromFirstRequest[req.params.id]);
+	  }
+	}, function(err) {
+		console.log("error:!!", err);
+	  // handle all your errors here
+	});
+
+
+
+/*
 	request(options)
     .then(function (body) {
 	 	res.render('producer', body[req.params.id]);
@@ -48,6 +75,7 @@ module.exports.producer = function (req, res, next) {
     .catch(function (err) {
       console.log(err);
     });
+*/
 };
 
 /* GET schedule page */
