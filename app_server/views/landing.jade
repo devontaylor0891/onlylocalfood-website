@@ -12,38 +12,43 @@ extends layout
 					a.btn.btn-primary.btn-lg(href='search', role='button') Start Searching!
 				p.text-center or 
 					a(href='/how-it-works/') learn how it works.
+				h4.text-center And if you produce local food and want to learn about how Onlylocalfood can help you, 
+					a(href='/producers/') Click Here.
 
 
 		
-		<!-- quick description section -->
-		h2 A new way to find and order local food
-		.row.text-center
-			.col-md-4
-				.services
-					span.glyphicon.glyphicon-globe(aria-hidden='true')
-					h3
-						strong Location-based
-					p This is where a nice description will go.
-			.col-md-4
-				.services
-					span.glyphicon.glyphicon-user(aria-hidden='true')
-					h3
-						strong No middleman
-					p This is where a nice description will go.		
-			.col-md-4
-				.services
-					span.glyphicon.glyphicon-cloud(aria-hidden='true')
-					h3
-						strong Pay on delivery
-					p This is where a nice description will go.
-							
-		.well.well-lg
-			<!-- contact form section -->
-			h2 Contact us
-			h4 Have questions, comments, or want to know more? Let us know, we'd love to hear from you!
-			br/
-			.row
-				.col-md-10.col-md-offset-1
+		<!-- SERVICES SECTION -->
+		.row
+			h2 What makes Onlylocalfood.com different, and how does that benefit you?
+			.row.text-center
+				.col-md-4
+					.services
+						span.glyphicon.glyphicon-globe(aria-hidden='true')
+						h3
+							strong Location-based
+						p OLF uses location services to show you what is available in the area you choose - because if you live in Winnipeg, do you really want to see what's only available in Regina?
+				.col-md-4
+					.services
+						span.glyphicon.glyphicon-user(aria-hidden='true')
+						h3
+							strong No middleman
+						p Buying local food is meant to be between you and the producer. So rather than ordering FROM OLF, the site is simply a tool that you use to buy directly from the producer.		
+				.col-md-4
+					.services
+						span.glyphicon.glyphicon-calendar(aria-hidden='true')
+						h3
+							strong Buying local made convenient
+						p You'll know ahead of time when and where you can get your order. You can integrate buying local food with your schedule. OLF provides all the information you need.
+			
+		<!-- CONTACT FORM -->
+		.row
+			.col-md-6.col-md-offset-3.col-sm-8.col-sm-offset-2.col-xs-12
+				.well.well-lg
+					<!-- contact form section -->
+					h2 Contact us
+					h4 Have questions, comments, or want to know more? Let us know, we'd love to hear from you!
+					br/
+			
 					form.contact-form.form-horizontal
 						.form-group
 							label.col-sm-2.control-label(for='name') Your Name
