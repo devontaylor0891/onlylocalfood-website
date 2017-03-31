@@ -116,8 +116,11 @@ a {
 	padding-right: 3em;
 }
 
+/* landing specific styles */
+
 .services .glyphicon {
 	font-size: 5em;
+	color: #4caf50;
 }
 
 .searchOptions {
@@ -146,6 +149,11 @@ a {
 	padding.top: 0;
 }
 
+/* make radio buttons inside tables vertical-align */
+td input {
+	vertical-align: middle;
+}
+
 /* CART-specific styles */
 .xs40 {
 	width: 40% !important;
@@ -168,6 +176,6 @@ a {
   /* Table rows have a gray bottom stroke by default */
 
   .tablesaw-stack tbody tr {
-    border-bottom: 3px solid #dfdfdf;
+    border-bottom: 3px solid #9ccc65;
   }
 }
