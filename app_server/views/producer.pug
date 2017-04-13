@@ -1,0 +1,93 @@
+extends layout
+
+block content
+	.row
+		.panel.panel-default
+			.panel-body
+				.col-xs-5.col-sm-3
+					//img.img-responsive.productImage(src='/images/product.jpg')
+					img.img-responsive.productImage(src= image)
+				.col-xs-7.col-sm-9
+					.row.text-center
+						h3= producerName
+					.row.text-center
+						h4.text-muted.padding-top-zero= location
+						h4.text-muted.padding-top-zero= email
+					.row
+						p= description
+	.row
+		.col-md-10.col-md-offset-1
+			.panel.panel-default
+				.panel-heading
+					h4.panel-title Upcoming Deliveries
+				.panel-body
+					table.table.table-hover.table-responsive
+						thead
+							tr
+								th Type
+								th Date
+								th City
+								th Start Time
+								th End Time
+								th Details
+						for delivery in deliveries
+							tbody
+								tr
+									td= delivery.type
+									td= delivery.date
+									td= delivery.city
+									td= delivery.startTime
+									td= delivery.endTime
+									td= delivery.description
+					a.btn.btn-primary(href="/producer/schedule/", role="button") See Full Schedule
+	.row
+		.col-sm-4.col-md-3.bg-grey
+			h4.text-white Search Options
+			.row.searchOptions.text-muted
+				.well
+					form
+						.form-group					
+							label(for='location') Location
+							input.form-control#location(type='text', name='location', placeholder='Moosomin')
+						.form-group
+							label(for='distance') Search Radius (km)
+							.btn-group.btn-group-justified
+								label.btn.btn-primary
+									span 5
+								label.btn.btn-primary
+									span 25
+								label.btn.btn-primary
+									span 50
+								label.btn.btn-primary
+									span 100
+
+			.row.searchOptions.text-muted
+				.well
+					form
+						.form-group
+							label(for='distance') Category
+								.checkbox
+									label
+										input(type='checkbox', value='Door-to-door')
+										span Door-to-door
+								.checkbox
+									label
+										input(type='checkbox', value='Off-farm Pickup')
+										span Off-farm Pickup
+								.checkbox
+									label
+										input(type='checkbox', value='Scheduled Farmgate Pickup')
+										span Scheduled Farmgate Pickup
+		.col-sm-8.col-md-9
+			.row
+				for product in products
+					.col-md-4.col-sm-6.col-xs-12
+						.thumbnail
+							a(href='/producer/product/')
+									img.img-responsive.productImage(src='#{product.image}')
+							.caption
+								h5.productName= product.productName						
+								p.price $#{product.price}/#{product.unit}
+								.btn-group.btn-group-justified
+									a.btn.btn-primary(href="/producer/product/", role="button") Details
+									a.btn.btn-primary(href="/cart", role="button") Add to Cart			

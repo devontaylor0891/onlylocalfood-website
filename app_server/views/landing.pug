@@ -1,0 +1,62 @@
+extends layout.pug
+block content
+  .backImage
+    .splashContents
+      h1 A new and better way to find and order local food!
+      h3
+        | Use OLF to find what is available in your area, when and how to get it, and even create online orders that go directly to the producer - no middleman needed!
+      p.text-center
+        a.btn.btn-primary.btn-lg(href='search', role='button') Start Searching!
+      p.text-center
+        | or 
+        a(href='/how-it-works/') learn how it works.
+      h4.text-center
+        | And if you produce local food and want to learn about how Onlylocalfood can help you, 
+        a(href='/producers/') Click Here.
+  .row
+    h2 What makes Onlylocalfood.com different, and how does that benefit you?
+    .row.text-center
+      .col-md-4
+        .services
+          span.glyphicon.glyphicon-globe(aria-hidden='true')
+          h3
+            strong Location-based
+          p
+            | OLF uses location services to show you what is available in the area you choose - because if you live in Winnipeg, do you really want to see what&apos;s only available in Regina?
+      .col-md-4
+        .services
+          span.glyphicon.glyphicon-user(aria-hidden='true')
+          h3
+            strong No middleman
+          p
+            | Buying local food is meant to be between you and the producer. So rather than ordering FROM OLF, the site is simply a tool that you use to buy directly from the producer.
+      .col-md-4
+        .services
+          span.glyphicon.glyphicon-calendar(aria-hidden='true')
+          h3
+            strong Buying local made convenient
+          p
+            | You&apos;ll know ahead of time when and where you can get your order. You can integrate buying local food with your schedule. OLF provides all the information you need.
+  .row
+    .col-md-6.col-md-offset-3.col-sm-8.col-sm-offset-2.col-xs-12
+      .well.well-lg
+        h2 Contact us
+        h4
+          | Have questions, comments, or want to know more? Let us know, we&apos;d love to hear from you!
+        br
+        form.contact-form.form-horizontal
+          .form-group
+            label.col-sm-2.control-label(for='name') Your Name
+            .col-sm-10
+              input#name.form-control(type='text', name='name')
+          .form-group
+            label.col-sm-2.control-label(for='email') Email
+            .col-sm-10
+              input#email.form-control(type='email', name='email')
+          .form-group
+            label.col-sm-2.control-label(for='comments') Comments or Questions
+            .col-sm-10
+              textarea#comments.form-control(type='textarea', name='comments', rows='3')
+        |  
+        button.btn.btn-primary.pull-right(type='submit') Send Message
+        br

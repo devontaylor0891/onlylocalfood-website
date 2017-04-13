@@ -92,7 +92,7 @@ block content
 														
 				.modal-footer
 					button.btn.btn-primary(data-dismiss='modal') Confirm Edits
-					.col-xs-1
+					| &nbsp&nbsp
 					button.btn.btn-default(data-dismiss='modal') Don't Edit
 					
 	<!-- USER DELETE MODAL -->
@@ -142,8 +142,7 @@ block content
 							
 				.modal-footer
 					button.btn.btn-primary(data-dismiss='modal') Confirm Delete
-					&nbsp
-					&nbsp
+					| &nbsp&nbsp
 					button.btn.btn-default(data-dismiss='modal') Don't Delete
 	
 	<!-- PRODUCER VIEW MODAL -->
@@ -220,11 +219,9 @@ block content
 								b View:
 						.col-sm-9
 							a.btn.btn-primary.btn-xs(href="#") Product List
-							&nbsp
-							&nbsp
+							| &nbsp&nbsp
 							a.btn.btn-primary.btn-xs(href="#") Delivery List
-							&nbsp
-							&nbsp
+							| &nbsp&nbsp
 							a.btn.btn-primary.btn-xs(href="#") Order History
 								
 				.modal-footer
@@ -283,8 +280,7 @@ block content
 														
 				.modal-footer
 					button.btn.btn-primary(data-dismiss='modal') Confirm Edits
-					&nbsp
-					&nbsp
+					| &nbsp&nbsp
 					button.btn.btn-default(data-dismiss='modal') Don't Edit
 	
 	<!-- PRODUCER DELETE MODAL -->
@@ -361,17 +357,14 @@ block content
 								b View:
 						.col-sm-9
 							a.btn.btn-primary.btn-xs(href="#") Product List
-							&nbsp
-							&nbsp
+							| &nbsp&nbsp
 							a.btn.btn-primary.btn-xs(href="#") Delivery List
-							&nbsp
-							&nbsp
+							| &nbsp&nbsp
 							a.btn.btn-primary.btn-xs(href="#") Order History
 								
 				.modal-footer
 					button.btn.btn-primary(data-dismiss='modal') Confirm Delete
-					&nbsp
-					&nbsp
+					| &nbsp&nbsp
 					button.btn.btn-default(data-dismiss='modal') Don't Delete
 	
 	<!-- PRODUCT VIEW MODAL -->
@@ -608,8 +601,7 @@ block content
 							
 				.modal-footer
 					button.btn.btn-primary(data-dismiss='modal') Confirm Delete
-					&nbsp
-					&nbsp
+					| &nbsp&nbsp
 					button.btn.btn-default(data-dismiss='modal') Don't Delete
 	
 	<!-- ORDER VIEW MODAL -->
@@ -829,8 +821,7 @@ block content
 										
 				.modal-footer
 					button.btn.btn-primary(data-dismiss='modal') Confirm Edits
-					&nbsp
-					&nbsp
+					| &nbsp&nbsp
 					button.btn.btn-default(data-dismiss='modal') Don't Edit
 	
 	<!-- ORDER DELETE MODAL -->
@@ -925,8 +916,7 @@ block content
 					
 				.modal-footer
 					button.btn.btn-primary(data-dismiss='modal') Confirm Delete
-					&nbsp
-					&nbsp
+					| &nbsp&nbsp
 					button.btn.btn-default(data-dismiss='modal') Don't Delete
 	
 	<!-- DELIVERY VIEW MODAL -->
@@ -1078,8 +1068,7 @@ block content
 													
 				.modal-footer
 					button.btn.btn-primary(data-dismiss='modal') Confirm Edits
-					&nbsp
-					&nbsp
+					| &nbsp&nbsp
 					button.btn.btn-default(data-dismiss='modal') Don't Edit
 	
 	<!-- DELIVERY DELETE MODAL -->
@@ -1158,8 +1147,7 @@ block content
 								
 				.modal-footer
 					button.btn.btn-primary(data-dismiss='modal') Confirm Delete
-					&nbsp
-					&nbsp
+					| &nbsp&nbsp
 					button.btn.btn-default(data-dismiss='modal') Don't Delete
 	
 	<!-- CONTENT -->
@@ -1204,8 +1192,6 @@ block content
 										th.data-tablesaw-sortable-head(scope="col", data-tablesaw-sortable-col="", data-tablesaw-priority="persist")
 											button.tablesaw-sortable-btn Type
 										th
-										th
-										th
 								tbody
 									tr
 										td 123456
@@ -1216,11 +1202,9 @@ block content
 										td Consumer
 										td 
 											a(data-toggle='modal', data-target='#userViewModal') View
-											&nbsp
-											&nbsp
+											| &nbsp&nbsp&nbsp
 											a(data-toggle='modal', data-target='#userEditModal') Edit
-											&nbsp
-											&nbsp
+											| &nbsp&nbsp&nbsp
 											a(data-toggle='modal', data-target="#userDeleteModal") Delete
 									tr
 										td 223456
@@ -1229,13 +1213,11 @@ block content
 										td Jan 2 2017
 										td Active
 										td Producer
-										td 
+										td
 											a(data-toggle='modal', data-target='#userViewModal') View
-											&nbsp
-											&nbsp
+											| &nbsp&nbsp&nbsp
 											a(data-toggle='modal', data-target='#userEditModal') Edit
-											&nbsp
-											&nbsp
+											| &nbsp&nbsp&nbsp
 											a(data-toggle='modal', data-target="#userDeleteModal") Delete
 
 			h2#producers Producers
@@ -1260,8 +1242,6 @@ block content
 										th.data-tablesaw-sortable-head(scope="col", data-tablesaw-sortable-col="", data-tablesaw-priority="persist")
 											button.tablesaw-sortable-btn Location
 										th
-										th
-										th
 								tbody
 									tr
 										td 123456
@@ -1269,22 +1249,22 @@ block content
 										td Active
 										td Moosomin
 										td 
-											a.btn.btn-primary.btn-xs(data-toggle='modal', data-target='#producerViewModal') View
-										td
-											a.btn.btn-primary.btn-xs(data-toggle='modal', data-target='#producerEditModal') Edit
-										td
-											a.btn.btn-default.btn-xs(href="#producerDeleteModal") Delete
+											a(data-toggle='modal', data-target='#producerViewModal') View
+											| &nbsp&nbsp&nbsp
+											a(data-toggle='modal', data-target='#producerEditModal') Edit
+											| &nbsp&nbsp&nbsp
+											a(href="#producerDeleteModal") Delete
 									tr
 										td 223456
 										td Garden2 Farms
 										td Active
 										td Wapella
 										td 
-											a.btn.btn-primary.btn-xs(data-toggle='modal', data-target='#producerViewModal') View
-										td
-											a.btn.btn-primary.btn-xs(data-toggle='modal', data-target='#producerEditModal') Edit
-										td
-											a.btn.btn-default.btn-xs(href="#producerDeleteModal") Delete
+											a(data-toggle='modal', data-target='#producerViewModal') View
+											| &nbsp&nbsp&nbsp
+											a(data-toggle='modal', data-target='#producerEditModal') Edit
+											| &nbsp&nbsp&nbsp
+											a(href="#producerDeleteModal") Delete
 												
 			h2#products Products
 			.panel-group#accordian
@@ -1315,8 +1295,6 @@ block content
 										th.data-tablesaw-sortable-head(scope="col", data-tablesaw-sortable-col="", data-tablesaw-priority="persist")
 											button.tablesaw-sortable-btn Producer
 										th
-										th
-										th
 								tbody
 									tr
 										td 123456
@@ -1328,11 +1306,11 @@ block content
 										td 3
 										td Garden Farms
 										td 
-											a.btn.btn-primary.btn-sm(data-toggle='modal', data-target='#productViewModal') View
-										td
-											a.btn.btn-primary.btn-sm(data-toggle='modal', data-target='#productEditModal') Edit
-										td
-											a.btn.btn-default.btn-sm(href="#productDeleteModal") Delete
+											a(data-toggle='modal', data-target='#productViewModal') View
+											| &nbsp&nbsp&nbsp
+											a(data-toggle='modal', data-target='#productEditModal') Edit
+											| &nbsp&nbsp&nbsp
+											a(href="#productDeleteModal") Delete
 									tr
 										td 223456
 										td Cheese
@@ -1343,11 +1321,11 @@ block content
 										td 3
 										td Other Farms
 										td 
-											a.btn.btn-primary.btn-sm(data-toggle='modal', data-target='#productViewModal') View
-										td
-											a.btn.btn-primary.btn-sm(data-toggle='modal', data-target='#productEditModal') Edit
-										td
-											a.btn.btn-default.btn-sm(href="#productDeleteModal") Delete
+											a(data-toggle='modal', data-target='#productViewModal') View
+											| &nbsp&nbsp&nbsp
+											a(data-toggle='modal', data-target='#productEditModal') Edit
+											| &nbsp&nbsp&nbsp
+											a(href="#productDeleteModal") Delete
 											
 			h2#orders Orders
 			.panel-group#accordian
@@ -1377,8 +1355,6 @@ block content
 										th.data-tablesaw-sortable-head(scope="col", data-tablesaw-sortable-col="", data-tablesaw-priority="persist")
 											button.tablesaw-sortable-btn Producer
 										th
-										th
-										th
 								tbody
 									tr
 										td 123456
@@ -1389,11 +1365,11 @@ block content
 										td $44.50
 										td Garden Farms
 										td 
-											a.btn.btn-primary.btn-sm(data-toggle='modal', data-target='#orderViewModal') View
-										td
-											a.btn.btn-primary.btn-sm(data-toggle='modal', data-target='#orderEditModal') Edit
-										td
-											a.btn.btn-default.btn-sm(href="#orderDeleteModal") Delete
+											a(data-toggle='modal', data-target='#orderViewModal') View
+											| &nbsp&nbsp&nbsp
+											a(data-toggle='modal', data-target='#orderEditModal') Edit
+											| &nbsp&nbsp&nbsp
+											a(href="#orderDeleteModal") Delete
 									tr
 										td 44444
 										td Jan 4 2017
@@ -1403,11 +1379,11 @@ block content
 										td $54.50
 										td Garden2 Farms
 										td 
-											a.btn.btn-primary.btn-sm(data-toggle='modal', data-target='#orderViewModal') View
-										td
-											a.btn.btn-primary.btn-sm(data-toggle='modal', data-target='#orderEditModal') Edit
-										td
-											a.btn.btn-default.btn-sm(href="#orderDeleteModal") Delete
+											a(data-toggle='modal', data-target='#orderViewModal') View
+											| &nbsp&nbsp&nbsp
+											a(data-toggle='modal', data-target='#orderEditModal') Edit
+											| &nbsp&nbsp&nbsp
+											a(href="#orderDeleteModal") Delete
 			.panel-group#accordian
 				.panel.panel-default
 					.panel-heading
@@ -1435,8 +1411,6 @@ block content
 										th.data-tablesaw-sortable-head(scope="col", data-tablesaw-sortable-col="", data-tablesaw-priority="persist")
 											button.tablesaw-sortable-btn Producer
 										th
-										th
-										th
 								tbody
 									tr
 										td 123456
@@ -1447,7 +1421,7 @@ block content
 										td $44.50
 										td Garden Farms
 										td 
-											a.btn.btn-primary.btn-sm(data-toggle='modal', data-target='#orderViewModal') View
+											a(data-toggle='modal', data-target='#orderViewModal') View
 
 									tr
 										td 44444
@@ -1458,7 +1432,7 @@ block content
 										td $54.50
 										td Garden2 Farms
 										td 
-											a.btn.btn-primary.btn-sm(data-toggle='modal', data-target='#orderViewModal') View
+											a(data-toggle='modal', data-target='#orderViewModal') View
 			.panel-group#accordian
 				.panel.panel-default
 					.panel-heading
@@ -1486,8 +1460,6 @@ block content
 										th.data-tablesaw-sortable-head(scope="col", data-tablesaw-sortable-col="", data-tablesaw-priority="persist")
 											button.tablesaw-sortable-btn Producer
 										th
-										th
-										th
 								tbody
 									tr
 										td 123456
@@ -1498,7 +1470,7 @@ block content
 										td $44.50
 										td Garden Farms
 										td 
-											a.btn.btn-primary.btn-sm(data-toggle='modal', data-target='#orderViewModal') View
+											a(data-toggle='modal', data-target='#orderViewModal') View
 									tr
 										td 44444
 										td Jan 4 2017
@@ -1508,7 +1480,7 @@ block content
 										td $54.50
 										td Garden2 Farms
 										td 
-											a.btn.btn-primary.btn-sm(data-toggle='modal', data-target='#orderViewModal') View
+											a(data-toggle='modal', data-target='#orderViewModal') View
 			.panel-group#accordian
 				.panel.panel-default
 					.panel-heading
@@ -1536,8 +1508,6 @@ block content
 										th.data-tablesaw-sortable-head(scope="col", data-tablesaw-sortable-col="", data-tablesaw-priority="persist")
 											button.tablesaw-sortable-btn Producer
 										th
-										th
-										th
 								tbody
 									tr
 										td 123456
@@ -1548,7 +1518,7 @@ block content
 										td $44.50
 										td Garden Farms
 										td 
-											a.btn.btn-primary.btn-sm(data-toggle='modal', data-target='#orderViewModal') View
+											a(data-toggle='modal', data-target='#orderViewModal') View
 									tr
 										td 44444
 										td Jan 4 2017
@@ -1558,7 +1528,7 @@ block content
 										td $54.50
 										td Garden2 Farms
 										td 
-											a.btn.btn-primary.btn-sm(data-toggle='modal', data-target='#orderViewModal') View
+											a(data-toggle='modal', data-target='#orderViewModal') View
 			h2#deliveries Deliveries
 			.panel-group#accordian
 				.panel.panel-default
@@ -1587,8 +1557,6 @@ block content
 										th.data-tablesaw-sortable-head(scope="col", data-tablesaw-sortable-col="", data-tablesaw-priority="persist")
 											button.tablesaw-sortable-btn Order Value
 										th
-										th
-										th
 								tbody
 									tr
 										td 123456
@@ -1599,11 +1567,11 @@ block content
 										td $44.50
 										td Garden Farms
 										td 
-											a.btn.btn-primary.btn-sm(data-toggle='modal', data-target='#deliveryViewModal') View
-										td
-											a.btn.btn-primary.btn-sm(data-toggle='modal', data-target='#deliveryEditModal') Edit
-										td
-											a.btn.btn-default.btn-sm(data-toggle='modal', data-target='#deliveryDeleteModal') Delete
+											a(data-toggle='modal', data-target='#deliveryViewModal') View
+											| &nbsp&nbsp&nbsp
+											a(data-toggle='modal', data-target='#deliveryEditModal') Edit
+											| &nbsp&nbsp&nbsp
+											a(data-toggle='modal', data-target='#deliveryDeleteModal') Delete
 									tr
 										td 44444
 										td Jan 4 2017
@@ -1613,11 +1581,11 @@ block content
 										td $54.50
 										td Garden2 Farms
 										td 
-											a.btn.btn-primary.btn-sm(data-toggle='modal', data-target='#deliveryViewModal') View
-										td
-											a.btn.btn-primary.btn-sm(data-toggle='modal', data-target='#deliveryEditModal') Edit
-										td
-											a.btn.btn-default.btn-sm(data-toggle='modal', data-target='#deliveryDeleteModal') Delete
+											a(data-toggle='modal', data-target='#deliveryViewModal') View
+											| &nbsp&nbsp&nbsp
+											a(data-toggle='modal', data-target='#deliveryEditModal') Edit
+											| &nbsp&nbsp&nbsp
+											a(data-toggle='modal', data-target='#deliveryDeleteModal') Delete
 			.panel-group#accordian
 				.panel.panel-default
 					.panel-heading
@@ -1645,8 +1613,6 @@ block content
 										th.data-tablesaw-sortable-head(scope="col", data-tablesaw-sortable-col="", data-tablesaw-priority="persist")
 											button.tablesaw-sortable-btn Order Value
 										th
-										th
-										th
 								tbody
 									tr
 										td 123456
@@ -1657,7 +1623,7 @@ block content
 										td $44.50
 										td Garden Farms
 										td 
-											a.btn.btn-primary.btn-sm(data-toggle='modal', data-target='#deliveryViewModal') View
+											a(data-toggle='modal', data-target='#deliveryViewModal') View
 									tr
 										td 44444
 										td Jan 4 2017
@@ -1667,7 +1633,7 @@ block content
 										td $54.50
 										td Garden2 Farms
 										td 
-											a.btn.btn-primary.btn-sm(data-toggle='modal', data-target='#deliveryViewModal') View
+											a(data-toggle='modal', data-target='#deliveryViewModal') View
 
 												
 	script $('#userViewModal').modal('hide');

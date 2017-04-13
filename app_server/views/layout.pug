@@ -1,0 +1,96 @@
+doctype html
+html
+  head
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    title
+    // Font Awesome
+    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css')
+    // Bootstrap core CSS
+    link(href='/bootstrap/css/bootstrap.css', rel='stylesheet')
+    // Roboto font
+    link(href='https://fonts.googleapis.com/css?family=Roboto', rel='stylesheet')
+    // Tablesaw Styles
+    link(rel='stylesheet', href='../stylesheets/tablesaw.css')
+    link(rel='stylesheet', href='/stylesheets/style.css')
+  body
+    .greenBox
+    .navbar.navbar-default
+      .container
+        .navbar-header
+          a#logo.navbar-brand(href='/')
+            img(src='/images/logo.png')
+          button.navbar-toggle(type='button', data-toggle='collapse', data-target='#navbar-main')
+            span.icon-bar
+            span.icon-bar
+            span.icon-bar
+          #navbar-main.navbar-collapse.collapse
+            ul.nav.navbar-nav.navbar-right
+              li
+                a(href='/about/') About
+              li
+                button.btn.btn-primary.btn-sm#signupButton(data-toggle="modal", data-target="#signupModal") Sign Up	
+    .container
+      block content
+    
+        // SIGN UP MODAL
+      #signupModal.modal.fade(tab-index='-1', role='dialog', aria-labelledby='Signup', aria-hidden='true')
+        .modal-dialog.modal-sm(role='document')
+          .modal-content
+            .modal-header
+              h4.modal-title Signup for OLF
+            .modal-body
+              .row
+                form
+                  .form-group
+                    label(for='firstName') First Name
+                    input#firstName.form-control(type='text', name='firstName')
+                  .form-group
+                    label(for='email') Email
+                    input#email.form-control(type='email', name='email')
+                  .form-group
+                    label(for='password') Password
+                    input#password.form-control(type='password', name='password')
+            .modal-footer
+              button.btn.btn-default(data-dismiss='modal') Close
+              a.btn.btn-primary.pull-right(href='/dashboard/', role='button') Sign Up!
+      // CONTACT MODAL
+      #contactModal.modal.fade(tab-index='-1', role='dialog', aria-labelledby='Contact', aria-hidden='true')
+        .modal-dialog.modal-sm(role='document')
+          .modal-content
+            .modal-header
+              h4.modal-title Questions? Comments? Let us know!
+              p
+                | We're doing our best to make it easier to find and order local food. But if there's something we can do better, an area we should be serving, or anything else, please let us know. Thanks!
+            .modal-body
+              .row
+                form
+                  .form-group
+                    label(for='firstName') First Name
+                    input#firstName.form-control(type='text', name='firstName')
+                  .form-group
+                    label(for='email') Email
+                    input#email.form-control(type='email', name='email')
+                  .form-group
+                    label(for='comment') Questions or Comments
+                    textarea#comment.form-control(type='textarea', name='comment')
+            .modal-footer
+              button.btn.btn-default(data-dismiss='modal') Close
+              a.btn.btn-primary.pull-right(data-dismiss='modal', role='button') Tell us!
+                
+    footer
+      .row
+        .col-xs-12.col-sm-6.pull-right
+          a(data-toggle="modal", data-target="#contactModal") Contact Us
+        .col-xs-12.col-sm-6
+          small © OLF Test 2017
+    // JQuery
+    script(src='/bootstrap/js/jquery-3.1.1.min.js')
+    // Bootstrap tooltips
+    script(type='text/javascript', src='/bootstrap/js/tether.min.js')
+    // Bootstrap core JavaScript
+    script(type='text/javascript', src='/bootstrap/js/bootstrap.min.js')
+    //script $('#signupModal').modal('hide');
+    //script $('#contactModal').modal('hide');
+    // Tablesaw scripts
+    script(src='../javascripts/tablesaw.js')
+    script(src='../javascripts/tablesaw-init.js')

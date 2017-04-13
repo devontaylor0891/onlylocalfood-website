@@ -1,6 +1,5 @@
 extends layout
 
-
 block content
 
 	.row.text-center
@@ -43,6 +42,7 @@ block content
 					form.form-horizontal
 						form-group
 							label(for="community") Community:
+							| &nbsp&nbsp
 							select(name="community")
 								option(value="Moosomin") Moosomin
 								option(value="Wapella") Wapella
@@ -98,8 +98,7 @@ block content
 							input(type="checkbox")
 							| This is the disclaimer. This is the disclaimer. This is the disclaimer. This is the disclaimer. This is the disclaimer. This is the disclaimer. This is the disclaimer. This is the disclaimer. This is the disclaimer.
 	.row
-		button.btn.btn-primary.pull-right.margin-left-1em(href="/confirm/") Send Order
-		&nbsp
-		&nbsp
-		button.btn.btn-default.pull-right(href="#") Keep Shopping
+		a.btn.btn-primary.pull-right.margin-left-1em(href="/cart/confirm") Send Order
+		| &nbsp&nbsp
+		a.btn.btn-default.pull-right(href="#") Keep Shopping
 			

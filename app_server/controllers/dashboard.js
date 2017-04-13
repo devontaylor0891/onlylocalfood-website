@@ -14,3 +14,13 @@ module.exports.dashboard = function (req, res, next) {
 		]
 	})
 };
+
+/* GET consumer dashboard page */
+module.exports.dashboardConsumer = function (req, res, next) {
+	res.render('dashboard-consumer')
+};
+
+/* GET producer dashboard page */
+module.exports.dashboardProducer = function (req, res, next) {
+	res.render('dashboard-producer')
+};

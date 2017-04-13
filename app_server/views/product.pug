@@ -1,0 +1,47 @@
+extends layout
+
+
+block content
+	.row
+		.panel.panel-default
+			.panel-body
+				.col-xs-5.col-sm-3
+					img.img-responsive.productImage(src='#{image}')
+				.col-xs-7.col-sm-9
+					.row.text-center
+						h3= productName
+							br/
+							small $#{price}/#{unit}
+					.row.text-center
+						a.btn.btn-primary(href="/cart", role="button") Add to Cart
+					.row.text-center
+						h4.text-muted.padding-top-zero= producerName
+						h4.text-muted.padding-top-zero= location
+					.row
+						p= description
+	.row
+		.col-md-10.col-md-offset-1
+			.panel.panel-default
+				.panel-heading
+					h4.panel-title Upcoming Deliveries
+				.panel-body
+					table.table.table-hover.table-responsive
+						thead
+							tr
+								th Type
+								th Date
+								th City
+								th Start Time
+								th End Time
+								th Details
+						for delivery in deliveries
+							tbody
+								tr
+									td= delivery.type
+									td= delivery.date
+									td= delivery.location
+									td= delivery.startTime
+									td= delivery.endTime
+									td= delivery.description
+							
+					a.btn.btn-primary(href="/producer/schedule/", role="button") See Full Schedule

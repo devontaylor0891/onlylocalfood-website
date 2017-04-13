@@ -1,0 +1,552 @@
+extends layout
+
+block content
+
+	<!-- USER EDIT MODAL -->
+	
+	.modal.fade#userEditModal(tab-index='-1', role='dialog', aria-labelledby='Edit User', aria-hidden='true')
+		.modal-dialog(role="document")
+			.modal-content
+				.modal-header
+					h4.modal-title Edit User
+				.modal-body
+					.row
+						form.form-horizontal
+							.form-group
+								label.col-sm-3.control-label(for="firstName") First Name:
+								.col-sm-9
+									input.form-control(type="text", name="firstName", placeholder="Bob")
+							.form-group
+								label.col-sm-3.control-label(for="email") Email:
+								.col-sm-9
+									input.form-control(type="email", name="email", placeholder="bob@email.com")
+							.form-group
+								label.col-sm-3.control-label Join Date:
+								.col-sm-9
+									p Jan 1 2017
+							.form-group
+								label.col-sm-3.control-label(for="role") Role:
+								.col-sm-9
+									select(name="role")
+										option(value="consumer") Consumer
+										option(value="producer") Producer
+														
+				.modal-footer
+					button.btn.btn-primary(data-dismiss='modal') Confirm Edits
+					| &nbsp&nbsp&nbsp
+					button.btn.btn-default(data-dismiss='modal') Don't Edit
+
+	<!-- ORDER VIEW MODAL -->
+	
+	.modal.fade#orderViewModal(tab-index='-1', role='dialog', aria-labelledby='View Order', aria-hidden='true')
+		.modal-dialog(role="document")
+			.modal-content
+				.modal-header
+					h4.modal-title View Order
+				.modal-body
+					.row
+						.col-xs-3
+							p
+								b ID:
+						.col-xs-9
+							p XXXX
+					.row
+						.col-xs-3
+							p
+								b Producer: 
+						.col-xs-9
+							p Garden Farms
+					.row
+						.col-xs-3
+							p
+								b Location: 
+						.col-xs-9
+							p Moosomin
+					.row
+						.col-xs-3
+							p
+								b Type: 
+						.col-xs-9
+							p Door-to-door
+					.row
+						.col-xs-3
+							p
+								b Date: 
+						.col-xs-9
+							p Jan 1 2017
+					.row
+						.col-xs-3
+							p
+								b Time: 
+						.col-xs-9
+							p 2:00 - 4:00
+					.row
+						.col-xs-3
+							p
+								b Description: 
+						.col-xs-9
+							p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+					.row
+						.col-xs-3
+							p
+								b Address:
+						.col-xs-9
+							p 123 Main St.
+					.row
+						.col-xs-3
+							p
+								b Status:
+						.col-xs-9
+							p Pending
+					.row
+						table.table.table-hover
+							thead
+								tr
+									th Product
+									th Qty
+									th Price
+
+							tbody
+								tr
+									td Bacon
+									td 1
+									td $4.99
+								tr
+									td Cheese
+									td 1
+									td $14.99
+								tr
+									td Total:
+									td
+									td $19.98
+					.row
+						.col-xs-3
+							p
+								b Consumer Comments:
+						.col-xs-9
+							p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+					.row
+						.col-xs-3
+							p
+								b Producer Comments:
+						.col-xs-9
+							p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+					
+				.modal-footer
+					button.btn.btn-primary(data-dismiss='modal') OK
+	
+	<!-- ORDER EDIT MODAL -->
+	
+	.modal.fade#orderEditModal(tab-index='-1', role='dialog', aria-labelledby='Edit Order', aria-hidden='true')
+		.modal-dialog(role="document")
+			.modal-content
+				.modal-header
+					h4.modal-title Edit Order
+				.modal-body
+					.row
+						form.form-horizontal
+							.form-group
+								label.col-sm-3.control-label ID:
+								.col-sm-9
+									p 123456
+							.form-group
+								label.col-sm-3.control-label Producer Name:
+								.col-sm-9
+									p Garden Farms
+							.form-group
+								label.col-sm-3.control-label(for="location") Location:
+								.col-sm-9
+									select(name="location")
+										option(value="Moosomin") Moosomin
+										option(value="Wapella") Wapella
+							.form-group
+								label.control-label Delivery:
+								table.table.table-hover.table-responsive
+									tbody
+										tr
+											td 
+												input(type="radio")
+											td 
+												table.tablesaw.tablesaw-stack.table-hover.table(data-tablesaw-mode="stack")
+													thead
+														tr
+															th Date
+															th Time
+															th Type
+															th Details
+														tbody
+															tr
+																td Jan 1
+																td 2:00 - 4:30
+																td Door-to-door
+																td This is where a nice description will go. This is where a nice description will go. This is where a nice description will go.
+															
+										tr
+											td 
+												input(type="radio")
+											td 
+												table.tablesaw.tablesaw-stack.table-hover.table(data-tablesaw-mode="stack")
+													thead
+														tr
+															th Date
+															th Time
+															th Type
+															th Details
+														tbody
+															tr
+																td Jan 2
+																td 1:00 - 2:30
+																td Other Pickup
+																td This is where a nice description will go. This is where a nice description will go. This is where a nice description will go.
+							.form-group
+								label.col-sm-3.control-label(for="address") Address:
+								.col-sm-9
+									input(type="text", name="address", placeholder="123 Main St")
+							.form-group
+								label.col-sm-3.control-label Status:
+								.col-sm-9
+									p Pending
+							form-group
+								label.col-sm-3.control-label Order:
+								table.table.table-hover.table-responsive
+									thead
+										tr
+											th.xs40 Product
+											th.xs25 Qty
+											th.xs25 Price
+											th.xs10 
+									tbody
+										tr
+											td Bacon
+												p $4.99
+											td
+												input(type="number", placeholder="1", name="quantity")
+											td $4.99
+											td
+												span.glyphicon.glyphicon-remove-sign.red-text(aria-hidden='true')
+										tr
+											td Cheese
+												p $14.99
+											td
+												input(type="number", placeholder="1", name="quantity")
+											td $14.99
+											td
+												span.glyphicon.glyphicon-remove-sign.red-text(aria-hidden='true')
+							.form-group
+								label.col-sm-3.control-label Consumer Comments:
+								.col-sm-9
+									p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+							.form-group
+								label.col-sm-3.control-label Producer Comments:
+								.col-sm-9
+									p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+										
+				.modal-footer
+					button.btn.btn-primary(data-dismiss='modal') Confirm Edits
+					| &nbsp&nbsp&nbsp
+					button.btn.btn-default(data-dismiss='modal') Don't Edit
+	
+	<!-- ORDER DELETE MODAL -->
+	
+	.modal.fade#orderDeleteModal(tab-index='-1', role='dialog', aria-labelledby='Delete Order', aria-hidden='true')
+		.modal-dialog(role="document")
+			.modal-content
+				.modal-header
+					h4.modal-title Delete Order
+				.modal-body
+					.row
+						.col-xs-3
+							p
+								b ID:
+						.col-xs-9
+							p XXXX
+					.row
+						.col-xs-3
+							p
+								b Producer: 
+						.col-xs-9
+							p Garden Farms
+					.row
+						.col-xs-3
+							p
+								b Location: 
+						.col-xs-9
+							p Moosomin
+					.row
+						.col-xs-3
+							p
+								b Type: 
+						.col-xs-9
+							p Door-to-door.
+					.row
+						.col-xs-3
+							p
+								b Description: 
+						.col-xs-9
+							p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+					.row
+						.col-xs-3
+							p
+								b Address:
+						.col-xs-9
+							p 123 Main St.
+					.row
+						.col-xs-3
+							p
+								b Status:
+						.col-xs-9
+							p Pending
+					.row
+						table.table.table-hover
+							thead
+								tr
+									th Product
+									th Qty
+									th Price
+
+							tbody
+								tr
+									td Bacon
+									td 1
+									td $4.99
+								tr
+									td Cheese
+									td 1
+									td $14.99
+								tr
+									td Total:
+									td
+									td $19.98
+					.row
+						.col-xs-3
+							p
+								b Consumer Comments:
+						.col-xs-9
+							p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+					.row
+						.col-xs-3
+							p
+								b Producer Comments:
+						.col-xs-9
+							p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+					
+				.modal-footer
+					button.btn.btn-primary(data-dismiss='modal') Confirm Delete
+					| &nbsp&nbsp&nbsp
+					button.btn.btn-default(data-dismiss='modal') Don't Delete
+	
+	<!-- CONTENT -->
+	.row
+		
+		<!-- LINKS -->
+		.col-md-3.bg-grey
+			h3 Select your view:
+			.row
+				.col-xs-10.col-xs-offset-1
+					a.btn.btn-primary.btn-block(href="#orders") My Orders
+					a.btn.btn-primary.btn-block(href="#profile") My Profile
+				
+		<!-- TABLES -->
+		.col-md-9.small
+			
+			h2#orders Orders
+			.panel-group#accordian
+				.panel.panel-default
+					.panel-heading
+						h4.panel-title
+							a(data-toggle="collapse", data-parent="#accordian", href="#pendingOrdersAccordian") Pending Orders  
+								i.fa.fa-caret-down.fa-lg
+					.panel-collapse.collapse.in#pendingOrdersAccordian
+						.panel-body
+							p GET all orders where status is pending
+							table.tablesaw.tablesaw-stack.data-tablesaw-sortable.table-hover.table(data-tablesaw-mode="stack" data-tablesaw-sortable="")
+								thead
+									tr
+										th.data-tablesaw-sortable-head(scope="col", data-tablesaw-sortable-col="", data-tablesaw-priority="persist")
+											button.tablesaw-sortable-btn Date
+										th.data-tablesaw-sortable-head(scope="col", data-tablesaw-sortable-col="", data-tablesaw-priority="persist")
+											button.tablesaw-sortable-btn Location
+										th.data-tablesaw-sortable-head(scope="col", data-tablesaw-sortable-col="", data-tablesaw-priority="persist")
+											button.tablesaw-sortable-btn Delivery Type
+										th.data-tablesaw-sortable-head(scope="col", data-tablesaw-sortable-col="", data-tablesaw-priority="persist")
+											button.tablesaw-sortable-btn Order Value
+										th.data-tablesaw-sortable-head(scope="col", data-tablesaw-sortable-col="", data-tablesaw-priority="persist")
+											button.tablesaw-sortable-btn Producer
+										th
+								tbody
+									tr
+										td Jan 3 2017
+										td Moosomin
+										td Door-to-door
+										td $44.50
+										td Garden Farms
+										td 
+											a(data-toggle='modal', data-target='#orderViewModal') View
+											| &nbsp&nbsp&nbsp
+											a(data-toggle='modal', data-target='#orderEditModal') Edit
+											| &nbsp&nbsp&nbsp
+											a(data-toggle='modal', href="#orderDeleteModal") Delete
+									tr
+										td Jan 4 2017
+										td Moosomin
+										td Other Pickup
+										td $54.50
+										td Garden2 Farms
+										td 
+											a(data-toggle='modal', data-target='#orderViewModal') View
+											| &nbsp&nbsp&nbsp
+											a(data-toggle='modal', data-target='#orderEditModal') Edit
+											| &nbsp&nbsp&nbsp
+											a(data-toggle='modal', href="#orderDeleteModal") Delete
+			.panel-group#accordian
+				.panel.panel-default
+					.panel-heading
+						h4.panel-title
+							a(data-toggle="collapse", data-parent="#accordian", href="#acceptedOrdersAccordian") Accepted Orders  
+								i.fa.fa-caret-down.fa-lg
+					.panel-collapse.collapse.in#acceptedOrdersAccordian
+						.panel-body
+							p GET all orders where status is accepted
+							table.tablesaw.tablesaw-stack.data-tablesaw-sortable.table-hover.table(data-tablesaw-mode="stack" data-tablesaw-sortable="")
+								thead
+									tr
+										th.data-tablesaw-sortable-head(scope="col", data-tablesaw-sortable-col="", data-tablesaw-priority="persist")
+											button.tablesaw-sortable-btn Date
+										th.data-tablesaw-sortable-head(scope="col", data-tablesaw-sortable-col="", data-tablesaw-priority="persist")
+											button.tablesaw-sortable-btn Location
+										th.data-tablesaw-sortable-head(scope="col", data-tablesaw-sortable-col="", data-tablesaw-priority="persist")
+											button.tablesaw-sortable-btn Delivery Type
+										th.data-tablesaw-sortable-head(scope="col", data-tablesaw-sortable-col="", data-tablesaw-priority="persist")
+											button.tablesaw-sortable-btn Order Value
+										th.data-tablesaw-sortable-head(scope="col", data-tablesaw-sortable-col="", data-tablesaw-priority="persist")
+											button.tablesaw-sortable-btn Producer
+										th
+								tbody
+									tr
+										td Jan 3 2017
+										td Moosomin
+										td Door-to-door
+										td $44.50
+										td Garden Farms
+										td 
+											a(data-toggle='modal', data-target='#orderViewModal') View
+
+									tr
+										td Jan 4 2017
+										td Moosomin
+										td Other Pickup
+										td $54.50
+										td Garden2 Farms
+										td 
+											a(data-toggle='modal', data-target='#orderViewModal') View
+			.panel-group#accordian
+				.panel.panel-default
+					.panel-heading
+						h4.panel-title
+							a(data-toggle="collapse", data-parent="#accordian", href="#completedOrdersAccordian") Completed Orders  
+								i.fa.fa-caret-down.fa-lg
+					.panel-collapse.collapse.in#completedOrdersAccordian
+						.panel-body
+							p GET all orders where status is completed
+							table.tablesaw.tablesaw-stack.data-tablesaw-sortable.table-hover.table(data-tablesaw-mode="stack" data-tablesaw-sortable="")
+								thead
+									tr
+										th.data-tablesaw-sortable-head(scope="col", data-tablesaw-sortable-col="", data-tablesaw-priority="persist")
+											button.tablesaw-sortable-btn Date
+										th.data-tablesaw-sortable-head(scope="col", data-tablesaw-sortable-col="", data-tablesaw-priority="persist")
+											button.tablesaw-sortable-btn Location
+										th.data-tablesaw-sortable-head(scope="col", data-tablesaw-sortable-col="", data-tablesaw-priority="persist")
+											button.tablesaw-sortable-btn Delivery Type
+										th.data-tablesaw-sortable-head(scope="col", data-tablesaw-sortable-col="", data-tablesaw-priority="persist")
+											button.tablesaw-sortable-btn Order Value
+										th.data-tablesaw-sortable-head(scope="col", data-tablesaw-sortable-col="", data-tablesaw-priority="persist")
+											button.tablesaw-sortable-btn Producer
+										th
+								tbody
+									tr
+										td Jan 3 2017
+										td Moosomin
+										td Door-to-door
+										td $44.50
+										td Garden Farms
+										td 
+											a(data-toggle='modal', data-target='#orderViewModal') View
+									tr
+										td Jan 4 2017
+										td Moosomin
+										td Other Pickup
+										td $54.50
+										td Garden2 Farms
+										td 
+											a(data-toggle='modal', data-target='#orderViewModal') View
+			.panel-group#accordian
+				.panel.panel-default
+					.panel-heading
+						h4.panel-title
+							a(data-toggle="collapse", data-parent="#accordian", href="#deniedOrdersAccordian") Denied Orders  
+								i.fa.fa-caret-down.fa-lg
+					.panel-collapse.collapse.in#deniedOrdersAccordian
+						.panel-body
+							p GET all orders where status is denied 
+							table.tablesaw.tablesaw-stack.data-tablesaw-sortable.table-hover.table(data-tablesaw-mode="stack" data-tablesaw-sortable="")
+								thead
+									tr
+										th.data-tablesaw-sortable-head(scope="col", data-tablesaw-sortable-col="", data-tablesaw-priority="persist")
+											button.tablesaw-sortable-btn Date
+										th.data-tablesaw-sortable-head(scope="col", data-tablesaw-sortable-col="", data-tablesaw-priority="persist")
+											button.tablesaw-sortable-btn Location
+										th.data-tablesaw-sortable-head(scope="col", data-tablesaw-sortable-col="", data-tablesaw-priority="persist")
+											button.tablesaw-sortable-btn Delivery Type
+										th.data-tablesaw-sortable-head(scope="col", data-tablesaw-sortable-col="", data-tablesaw-priority="persist")
+											button.tablesaw-sortable-btn Order Value
+										th.data-tablesaw-sortable-head(scope="col", data-tablesaw-sortable-col="", data-tablesaw-priority="persist")
+											button.tablesaw-sortable-btn Producer
+										th
+								tbody
+									tr
+										td Jan 3 2017
+										td Moosomin
+										td Door-to-door
+										td $44.50
+										td Garden Farms
+										td 
+											a(data-toggle='modal', data-target='#orderViewModal') View
+									tr
+										td Jan 4 2017
+										td Moosomin
+										td Other Pickup
+										td $54.50
+										td Garden2 Farms
+										td 
+											a(data-toggle='modal', data-target='#orderViewModal') View
+											
+			h2#profile My Profile
+			.panel-group
+				.panel.panel-default
+					.panel-heading
+						h4.panel-title
+							My Details  
+					.panel-body
+						p GET all users
+						table.tablesaw.tablesaw-stack.table-hover.table.tablesaw-row-zebra(data-tablesaw-mode="stack")
+							thead
+								tr
+									th First Name
+									th Email
+									th Join Date
+									th Type
+									th
+							tbody
+								tr
+									td Devon
+									td devon@email.com
+									td Jan 1 2017
+									td Consumer
+									td 
+										a(data-toggle='modal', data-target='#userEditModal') Edit
+
+
+	script $('#userEditModal').modal('hide');
+	script $('#orderViewModal').modal('hide');
+	script $('#orderEditModal').modal('hide');
+	script $('#orderDeleteModal').modal('hide');
