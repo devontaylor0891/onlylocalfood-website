@@ -1,7 +1,7 @@
 extends layout.pug
 block content
-  .backImage
-    .splashContents
+  .backImage.row
+    .splashContents.col-sm-5
       h1 A new and better way to find and order local food!
       h3
         | Use OLF to find what is available in your area, when and how to get it, and even create online orders that go directly to the producer - no middleman needed!
@@ -13,6 +13,9 @@ block content
       h4.text-center
         | And if you produce local food and want to learn about how Onlylocalfood can help you, 
         a(href='/producers/') Click Here.
+    .col-sm-7.bg-grey
+      .explainerImage
+        img(src="images/drawing.svg")
   .row
     h2 What makes Onlylocalfood.com different, and how does that benefit you?
     .row.text-center

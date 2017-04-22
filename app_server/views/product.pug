@@ -6,24 +6,24 @@ block content
 		.panel.panel-default
 			.panel-body
 				.col-xs-5.col-sm-3
-					img.img-responsive.productImage(src='#{image}')
+					img.img-responsive.productImage(src= productImage)
 				.col-xs-7.col-sm-9
 					.row.text-center
 						h3= productName
 							br/
-							small $#{price}/#{unit}
+							small $#{productPrice}/#{productUnit}
 					.row.text-center
 						a.btn.btn-primary(href="/cart", role="button") Add to Cart
 					.row.text-center
 						h4.text-muted.padding-top-zero= producerName
-						h4.text-muted.padding-top-zero= location
+						h4.text-muted.padding-top-zero= producerLocation
 					.row
-						p= description
+						p= productDescription
 	.row
 		.col-md-10.col-md-offset-1
 			.panel.panel-default
 				.panel-heading
-					h4.panel-title Upcoming Deliveries
+					h4.panel-title Upcoming Schedule
 				.panel-body
 					table.table.table-hover.table-responsive
 						thead
@@ -34,14 +34,14 @@ block content
 								th Start Time
 								th End Time
 								th Details
-						for delivery in deliveries
+						each schedule in schedules
 							tbody
 								tr
-									td= delivery.type
-									td= delivery.date
-									td= delivery.location
-									td= delivery.startTime
-									td= delivery.endTime
-									td= delivery.description
+									td= schedule.schedulesType
+									td= schedule.schedulesDate
+									td= schedule.schedulesLocation
+									td= schedule.startTime
+									td= schedule.endTime
+									td= schedule.schedulesDescription
 							
 					a.btn.btn-primary(href="/producer/schedule/", role="button") See Full Schedule

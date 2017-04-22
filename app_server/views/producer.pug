@@ -5,21 +5,20 @@ block content
 		.panel.panel-default
 			.panel-body
 				.col-xs-5.col-sm-3
-					//img.img-responsive.productImage(src='/images/product.jpg')
-					img.img-responsive.productImage(src= image)
+					img.img-responsive.productImage(src= producerLogo)
 				.col-xs-7.col-sm-9
 					.row.text-center
 						h3= producerName
 					.row.text-center
-						h4.text-muted.padding-top-zero= location
-						h4.text-muted.padding-top-zero= email
+						h4.text-muted.padding-top-zero= producerLocation
+						h4.text-muted.padding-top-zero= producerEmail
 					.row
-						p= description
+						p= producerDescription
 	.row
 		.col-md-10.col-md-offset-1
 			.panel.panel-default
 				.panel-heading
-					h4.panel-title Upcoming Deliveries
+					h4.panel-title Upcoming Schedule
 				.panel-body
 					table.table.table-hover.table-responsive
 						thead
@@ -30,15 +29,15 @@ block content
 								th Start Time
 								th End Time
 								th Details
-						for delivery in deliveries
+						each schedule in producerSchedule
 							tbody
 								tr
-									td= delivery.type
-									td= delivery.date
-									td= delivery.city
-									td= delivery.startTime
-									td= delivery.endTime
-									td= delivery.description
+									td= schedule.scheduleType
+									td= schedule.scheduleDate
+									td= schedule.scheduleLocation
+									td= schedule.startTime
+									td= schedule.endTime
+									td= schedule.scheduleDescription
 					a.btn.btn-primary(href="/producer/schedule/", role="button") See Full Schedule
 	.row
 		.col-sm-4.col-md-3.bg-grey
@@ -80,14 +79,14 @@ block content
 										span Scheduled Farmgate Pickup
 		.col-sm-8.col-md-9
 			.row
-				for product in products
+				each product in producerProducts
 					.col-md-4.col-sm-6.col-xs-12
 						.thumbnail
 							a(href='/producer/product/')
-									img.img-responsive.productImage(src='#{product.image}')
+									img.img-responsive.productImage(src='#{product.productImage}')
 							.caption
 								h5.productName= product.productName						
-								p.price $#{product.price}/#{product.unit}
+								p.price $#{product.productPrice}/#{product.productUnit}
 								.btn-group.btn-group-justified
 									a.btn.btn-primary(href="/producer/product/", role="button") Details
 									a.btn.btn-primary(href="/cart", role="button") Add to Cart			

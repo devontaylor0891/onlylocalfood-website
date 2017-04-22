@@ -6,7 +6,7 @@ block content
 		.col-md-10.col-md-offset-2
 			.panel.panel-default
 				.panel-heading
-					h4.panel-title Upcoming Deliveries
+					h4.panel-title Upcoming Schedule - #{producerName}
 				.panel-body
 					table.table.table-hover.table-responsive
 						thead
@@ -17,12 +17,12 @@ block content
 								th Start Time
 								th End Time
 								th Details
-						for delivery in deliveries
+						each schedule in schedules
 							tbody
 								tr
-									td= delivery.type
-									td= delivery.date
-									td= delivery.city
-									td= delivery.startTime
-									td= delivery.endTime
-									td= delivery.description 
+									td= schedule.scheduleType
+									td= schedule.scheduleDate
+									td= schedule.scheduleLocation
+									td= schedule.startTime
+									td= schedule.endTime
+									td= schedule.scheduleDescription 

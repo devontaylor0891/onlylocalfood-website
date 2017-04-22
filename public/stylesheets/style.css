@@ -97,6 +97,7 @@ a {
 	max-width: 100%;
 }
 
+/*
 .backImage {
 	width: 120%;
 	margin-left: -10%;
@@ -105,6 +106,16 @@ a {
 	height: auto;
 	background-image: url("/images/backImage.jpg");
 	background-size: cover;
+}
+
+*/
+.explainerImage {
+	width: 90%;
+	margin: auto 5%;
+}
+
+.explainerImage img {
+	width: 100%;
 }
 
 .splashContents {
@@ -146,7 +157,7 @@ a {
 }
 
 .padding-top-zero {
-	padding.top: 0;
+	padding-top: 0;
 }
 
 /* make radio buttons inside tables vertical-align */

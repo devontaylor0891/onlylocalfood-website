@@ -101,82 +101,18 @@ block content
 				
 		.col-sm-8.col-md-9
 			.row
-				.col-md-4.col-sm-6.col-xs-12
-					.thumbnail
-						a(href='/producer/product/')
-								img.img-responsive.productImage(src='/images/product.jpg')
-						.caption
-							h5.productName
-								a(href='/producer/product/') Product Name							
-							p.price $XX.xx/unit
-							.btn-group.btn-group-justified
-								a.btn.btn-primary(href="/producer/product/", role="button") Details
-								a.btn.btn-primary(href="/cart", role="button") Add to Cart
-							a(href='/producer/1')
-								h5.producerName.text-center Producer Name
-				.col-md-4.col-sm-6.col-xs-12
-					.thumbnail
-						a(href='/producer/product/')
-								img.img-responsive.productImage(src='/images/product.jpg')
-						.caption
-							h5.productName
-								a(href='/producer/product/') Product Name							
-							p.price $XX.xx/unit
-							.btn-group.btn-group-justified
-								a.btn.btn-primary(href="/producer/product/", role="button") Details
-								a.btn.btn-primary(href="/cart", role="button") Add to Cart
-							a(href='/producer/0')
-								h5.producerName.text-center Producer Name
-				.col-md-4.col-sm-6.col-xs-12
-					.thumbnail
-						a(href='/producer/product/')
-								img.img-responsive.productImage(src='/images/product.jpg')
-						.caption
-							h5.productName
-								a(href='/producer/product/') Product Name							
-							p.price $XX.xx/unit
-							.btn-group.btn-group-justified
-								a.btn.btn-primary(href="/producer/product/", role="button") Details
-								a.btn.btn-primary(href="/cart", role="button") Add to Cart
-							a(href='/producer/1')
-								h5.producerName.text-center Producer Name
-				.col-md-4.col-sm-6.col-xs-12
-					.thumbnail
-						a(href='/producer/product/')
-								img.img-responsive.productImage(src='/images/product.jpg')
-						.caption
-							h5.productName
-								a(href='/producer/product/') Product Name							
-							p.price $XX.xx/unit
-							.btn-group.btn-group-justified
-								a.btn.btn-primary(href="/producer/product/", role="button") Details
-								a.btn.btn-primary(href="/cart", role="button") Add to Cart
-							a(href='/producer/1')
-								h5.producerName.text-center Producer Name
-				.col-md-4.col-sm-6.col-xs-12
-					.thumbnail
-						a(href='/producer/product/')
-								img.img-responsive.productImage(src='/images/product.jpg')
-						.caption
-							h5.productName
-								a(href='/producer/product/') Product Name							
-							p.price $XX.xx/unit
-							.btn-group.btn-group-justified
-								a.btn.btn-primary(href="/producer/product/", role="button") Details
-								a.btn.btn-primary(href="/cart", role="button") Add to Cart
-							a(href='/producer/1')
-								h5.producerName.text-center Producer Name
-				.col-md-4.col-sm-6.col-xs-12
-					.thumbnail
-						a(href='/producer/product/')
-								img.img-responsive.productImage(src='/images/product.jpg')
-						.caption
-							h5.productName
-								a(href='/producer/product/') Product Name							
-							p.price $XX.xx/unit
-							.btn-group.btn-group-justified
-								a.btn.btn-primary(href="/producer/product/", role="button") Details
-								a.btn.btn-primary(href="/cart", role="button") Add to Cart
-							a(href='/producer/1')
-								h5.producerName.text-center Producer Name
+				each product in products
+					.col-md-4.col-sm-6.col-xs-12
+						.thumbnail
+							a(href='/product/')
+									img.img-responsive.productImage(src= product.productImage)
+							.caption
+								h5.productName
+									a(href='/product/')= product.productName							
+								p.price $#{product.productPrice}/#{product.productUnit}
+								.btn-group.btn-group-justified
+									a.btn.btn-primary(href="/product/", role="button") Details
+									a.btn.btn-primary(href="/cart", role="button") Add to Cart
+								a(href='/producer/1')
+									h5.producerName.text-center= product.producerName
 				

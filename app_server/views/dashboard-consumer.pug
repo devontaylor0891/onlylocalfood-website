@@ -8,7 +8,7 @@ block content
 		.modal-dialog(role="document")
 			.modal-content
 				.modal-header
-					h4.modal-title Edit User
+					h4.modal-title Edit Your Information
 				.modal-body
 					.row
 						form.form-horizontal
@@ -49,7 +49,7 @@ block content
 							p
 								b ID:
 						.col-xs-9
-							p XXXX
+							p 123445677
 					.row
 						.col-xs-3
 							p
@@ -358,7 +358,7 @@ block content
 								i.fa.fa-caret-down.fa-lg
 					.panel-collapse.collapse.in#pendingOrdersAccordian
 						.panel-body
-							p GET all orders where status is pending
+							//GET all orders where status is pending
 							table.tablesaw.tablesaw-stack.data-tablesaw-sortable.table-hover.table(data-tablesaw-mode="stack" data-tablesaw-sortable="")
 								thead
 									tr
@@ -374,30 +374,25 @@ block content
 											button.tablesaw-sortable-btn Producer
 										th
 								tbody
-									tr
-										td Jan 3 2017
-										td Moosomin
-										td Door-to-door
-										td $44.50
-										td Garden Farms
-										td 
-											a(data-toggle='modal', data-target='#orderViewModal') View
-											| &nbsp&nbsp&nbsp
-											a(data-toggle='modal', data-target='#orderEditModal') Edit
-											| &nbsp&nbsp&nbsp
-											a(data-toggle='modal', href="#orderDeleteModal") Delete
-									tr
-										td Jan 4 2017
-										td Moosomin
-										td Other Pickup
-										td $54.50
-										td Garden2 Farms
-										td 
-											a(data-toggle='modal', data-target='#orderViewModal') View
-											| &nbsp&nbsp&nbsp
-											a(data-toggle='modal', data-target='#orderEditModal') Edit
-											| &nbsp&nbsp&nbsp
-											a(data-toggle='modal', href="#orderDeleteModal") Delete
+									each order in orders
+										-var total = 0;
+										-var subTotal = 0;
+										tr
+											td= order.schedule.schedulesDate
+											td= order.schedule.schedulesLocation
+											td= order.schedule.schedulesType
+											each product in order.orderProducts 
+												-subTotal = product.orderQty * product.productPrice * product.productUnitsPer;
+												-total += subTotal;
+											td #{total}	
+											td= order.producerName
+											td 
+												a(data-toggle='modal', data-target='#orderViewModal') View
+												| &nbsp&nbsp&nbsp
+												a(data-toggle='modal', data-target='#orderEditModal') Edit
+												| &nbsp&nbsp&nbsp
+												a(data-toggle='modal', href="#orderDeleteModal") Delete
+									
 			.panel-group#accordian
 				.panel.panel-default
 					.panel-heading
@@ -406,7 +401,7 @@ block content
 								i.fa.fa-caret-down.fa-lg
 					.panel-collapse.collapse.in#acceptedOrdersAccordian
 						.panel-body
-							p GET all orders where status is accepted
+							//GET all orders where status is accepted
 							table.tablesaw.tablesaw-stack.data-tablesaw-sortable.table-hover.table(data-tablesaw-mode="stack" data-tablesaw-sortable="")
 								thead
 									tr
@@ -422,23 +417,21 @@ block content
 											button.tablesaw-sortable-btn Producer
 										th
 								tbody
-									tr
-										td Jan 3 2017
-										td Moosomin
-										td Door-to-door
-										td $44.50
-										td Garden Farms
-										td 
+									each order in orders
+										-var total = 0;
+										-var subTotal = 0;
+										tr
+											td= order.schedule.schedulesDate
+											td= order.schedule.schedulesLocation
+											td= order.schedule.schedulesType
+											each product in order.orderProducts 
+												-subTotal = product.orderQty * product.productPrice * product.productUnitsPer;
+												-total += subTotal;
+											td #{total}	
+											td= order.producerName 
+											td
 											a(data-toggle='modal', data-target='#orderViewModal') View
 
-									tr
-										td Jan 4 2017
-										td Moosomin
-										td Other Pickup
-										td $54.50
-										td Garden2 Farms
-										td 
-											a(data-toggle='modal', data-target='#orderViewModal') View
 			.panel-group#accordian
 				.panel.panel-default
 					.panel-heading
@@ -447,7 +440,7 @@ block content
 								i.fa.fa-caret-down.fa-lg
 					.panel-collapse.collapse.in#completedOrdersAccordian
 						.panel-body
-							p GET all orders where status is completed
+							//GET all orders where status is completed
 							table.tablesaw.tablesaw-stack.data-tablesaw-sortable.table-hover.table(data-tablesaw-mode="stack" data-tablesaw-sortable="")
 								thead
 									tr
@@ -463,22 +456,20 @@ block content
 											button.tablesaw-sortable-btn Producer
 										th
 								tbody
-									tr
-										td Jan 3 2017
-										td Moosomin
-										td Door-to-door
-										td $44.50
-										td Garden Farms
-										td 
-											a(data-toggle='modal', data-target='#orderViewModal') View
-									tr
-										td Jan 4 2017
-										td Moosomin
-										td Other Pickup
-										td $54.50
-										td Garden2 Farms
-										td 
-											a(data-toggle='modal', data-target='#orderViewModal') View
+									each order in orders
+										-var total = 0;
+										-var subTotal = 0;
+										tr
+											td= order.schedule.schedulesDate
+											td= order.schedule.schedulesLocation
+											td= order.schedule.schedulesType
+											each product in order.orderProducts 
+												-subTotal = product.orderQty * product.productPrice * product.productUnitsPer;
+												-total += subTotal;
+											td #{total}	
+											td= order.producerName 
+											td 
+												a(data-toggle='modal', data-target='#orderViewModal') View
 			.panel-group#accordian
 				.panel.panel-default
 					.panel-heading
@@ -487,7 +478,7 @@ block content
 								i.fa.fa-caret-down.fa-lg
 					.panel-collapse.collapse.in#deniedOrdersAccordian
 						.panel-body
-							p GET all orders where status is denied 
+							//GET all orders where status is denied 
 							table.tablesaw.tablesaw-stack.data-tablesaw-sortable.table-hover.table(data-tablesaw-mode="stack" data-tablesaw-sortable="")
 								thead
 									tr
@@ -503,22 +494,20 @@ block content
 											button.tablesaw-sortable-btn Producer
 										th
 								tbody
-									tr
-										td Jan 3 2017
-										td Moosomin
-										td Door-to-door
-										td $44.50
-										td Garden Farms
-										td 
-											a(data-toggle='modal', data-target='#orderViewModal') View
-									tr
-										td Jan 4 2017
-										td Moosomin
-										td Other Pickup
-										td $54.50
-										td Garden2 Farms
-										td 
-											a(data-toggle='modal', data-target='#orderViewModal') View
+									each order in orders
+										-var total = 0;
+										-var subTotal = 0;
+										tr
+											td= order.schedule.schedulesDate
+											td= order.schedule.schedulesLocation
+											td= order.schedule.schedulesType
+											each product in order.orderProducts 
+												-subTotal = product.orderQty * product.productPrice * product.productUnitsPer;
+												-total += subTotal;
+											td #{total}	
+											td= order.producerName 
+											td 
+												a(data-toggle='modal', data-target='#orderViewModal') View
 											
 			h2#profile My Profile
 			.panel-group
@@ -527,21 +516,20 @@ block content
 						h4.panel-title
 							My Details  
 					.panel-body
-						p GET all users
 						table.tablesaw.tablesaw-stack.table-hover.table.tablesaw-row-zebra(data-tablesaw-mode="stack")
 							thead
 								tr
 									th First Name
 									th Email
 									th Join Date
-									th Type
+									th Account Type
 									th
 							tbody
 								tr
-									td Devon
-									td devon@email.com
-									td Jan 1 2017
-									td Consumer
+									td= firstName
+									td= userEmail
+									td= creationDate
+									td= userType
 									td 
 										a(data-toggle='modal', data-target='#userEditModal') Edit
 
