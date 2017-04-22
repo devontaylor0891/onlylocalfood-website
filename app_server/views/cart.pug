@@ -13,6 +13,7 @@ block content
 					h4.panel-title Step 1 
 						small Review your items
 				.panel-body
+					h4= producerName
 					table.table.table-hover
 						form
 							thead
@@ -22,15 +23,19 @@ block content
 									th.col-xs-3 Price
 									th.col-xs-1 
 							tbody
+								each product in producerProducts
+									tr
+										td= product.productName 
+										td
+											input(type="number", placeholder="1", name="quantity")
+										td= product.productPrice
+										td
+											span.glyphicon.glyphicon-remove-sign.red-text(aria-hidden='true')
 								tr
-									td Product Name
-										p $XX.xx
 									td
-										input(type="number", placeholder="1", name="quantity")
-									td $XX.xx
+									td Order Total:
 									td
-										span.glyphicon.glyphicon-remove-sign.red-text(aria-hidden='true')
-			
+									
 	.row
 		.col-sm-10.col-sm-offset-1
 			.panel.panel-default
@@ -43,10 +48,10 @@ block content
 						form-group
 							label(for="community") Community:
 							| &nbsp&nbsp
-							select(name="community")
-								option(value="Moosomin") Moosomin
-								option(value="Wapella") Wapella
-								
+							select(name="community", var selected = {schedule.scheduleLocation})
+								each schedule in producerSchedule
+									option(value= schedule.scheduleLocation)= schedule.scheduleLocation
+									
 						table.table.table-hover.table-responsive
 							tbody
 								tr
@@ -57,35 +62,20 @@ block content
 											thead
 												tr
 													th Date
-													th Time
+													th Start
+													th End
 													th Type
 													th Details
 												tbody
-													tr
-														td Jan 1
-														td 2:00 - 4:30
-														td Door-to-door
-														td This is where a nice description will go. This is where a nice description will go. This is where a nice description will go.
+													each schedule in producerSchedule
+														if producerSchedule.scheduleLocation == selected
+															tr
+																td= schedule.scheduleDate
+																td= schedule.startTime
+																td= schedule.endTime
+																td= schedule.scheduleType
+																td= schedule.scheduleDescription
 													
-								tr
-									td 
-										input(type="radio")
-									td 
-										table.tablesaw.tablesaw-stack.table-hover.table(data-tablesaw-mode="stack")
-											thead
-												tr
-													th Date
-													th Time
-													th Type
-													th Details
-												tbody
-													tr
-														td Jan 2
-														td 1:00 - 2:30
-														td Other Pickup
-														td This is where a nice description will go. This is where a nice description will go. This is where a nice description will go.
-						
-						
 	.row
 		.col-sm-10.col-sm-offset-1
 			.panel.panel-default
