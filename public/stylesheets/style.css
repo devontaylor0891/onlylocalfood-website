@@ -8,29 +8,33 @@ html, body {
 	}
 }
 
-@media (max-width: 767px) {
-	body {
-		padding: 50px 0px;
-	}
+body {
+	padding: 50px 0px;
 }
+/*
 @media (min-width: 768px) {
 	body {
 	  padding: 50px;
-	  /*font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;*/
+	  /*font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 	}
+}
+*/
+
+.container {
+	padding: 0 2.5%; !important
 }
 
 a {
-  color: #880e4f;
+  color: #7a001a;
 }
 
 .btn-primary {
-	background-color: #880e4e !important;
-	border-color: #490027 !important;
+	background-color: #7a001a !important;
+	border-color: #570013 !important;
 }
 
 .btn:hover {
-	background-color: #6c0039 !important;
+	background-color: #570013 !important;
 }
 
 /*left margin to separate buttons */
@@ -47,7 +51,7 @@ a {
 }
 
 .panel-heading {
-	background-color: #558b2f !important;
+	background-color: #3c910f !important;
 	color: white !important;
 }
 
@@ -56,7 +60,7 @@ a {
 	margin-left:-25%;
 	height: 25em;
 	transform: translateY(-20%);
-	background-color: #9ccc65;
+	background-color: #54b420;
 	position: absolute;
 	z-index: -1;
 }
@@ -97,21 +101,16 @@ a {
 	max-width: 100%;
 }
 
-/*
 .backImage {
-	width: 120%;
-	margin-left: -10%;
-	margin-top: -20px;
-	padding: 0 25%;
-	height: auto;
-	background-image: url("/images/backImage.jpg");
-	background-size: cover;
+	background-color: #54b420;
+	width: 105%;
+	transform: translateX(-2.5%);
+	padding: 2% 5%;
 }
 
-*/
 .explainerImage {
 	width: 90%;
-	margin: auto 5%;
+	margin: 5% auto;
 }
 
 .explainerImage img {
@@ -119,7 +118,7 @@ a {
 }
 
 .splashContents {
-	padding: 5em 0;
+	padding: auto 3em;
 }
 
 .modal-body {
@@ -129,9 +128,18 @@ a {
 
 /* landing specific styles */
 
+.services-row {
+	padding-top: 5em;
+	padding-bottom: 5em;
+}
+
+.services-row h2 {
+	padding-bottom: .5em;
+}
+
 .services .glyphicon {
 	font-size: 5em;
-	color: #4caf50;
+	color: #3c910f;
 }
 
 .searchOptions {
